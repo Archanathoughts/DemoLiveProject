@@ -21,6 +21,13 @@ public class HeaderSection {
 	@FindBy(linkText="Login")
 	public static WebElement login;
 	
+	@FindBy(css="input[type='text'][name='search']")
+	public static WebElement searchTextbox;
+	
+	@FindBy(css="button[class$='btn-lg']")
+	public static WebElement searchButton;
+
+	
 	
 	
 }
