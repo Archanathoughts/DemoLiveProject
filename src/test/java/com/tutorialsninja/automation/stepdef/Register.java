@@ -11,7 +11,6 @@ import com.tutorialsninja.automation.pages.HeaderSection;
 import com.tutorialsninja.automation.pages.RegisterPage;
 
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.*;
 
 
@@ -79,18 +78,15 @@ public void i_launch_the_application()  {
 	
 
 @When("^I provide the below duplicate details into the fields$")
-public void i_provide_the_below_duplicate_details_into_the_fields(DataTable arg1) {
+public void i_provide_the_below_duplicate_details_into_the_fields(DataTable dataTable) {
+	
 	RegisterPage.enterAllDetails(dataTable,"duplicate");
     
 }
 
 @Then("^I should see the warning message stating that the user is already created$")
 public void i_should_see_the_warning_message_stating_that_the_user_is_already_created()  {
-   
+Assert.assertTrue(Elements.VerifyTextEquals(RegisterPage.mainWarning,"Warning: E-Mail Address is already registered!"));   
 }
-
-
-
-
 
 }
