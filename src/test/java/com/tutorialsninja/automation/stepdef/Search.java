@@ -24,6 +24,13 @@ public class Search {
 	public void i_should_see_the_product_in_the_search_resultsil_address(){
 	  Assert.assertTrue(Elements.isDisplayed(SearchPage.samsungSyncMasterSearchResult));
 	}
+	
+	@Then("^I should see the page displaying the message \"([^\"]*)\"$")
+	public void i_should_see_the_page_displaying_the_message(String message){
+	   Assert.assertTrue(Elements.VerifyTextEquals(SearchPage.noResutsMessage, message));
+	}
+
+
 
 
 

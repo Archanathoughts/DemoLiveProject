@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.tutorialsninja.automation.base.Base;
+import com.tutorialsninja.automation.framework.Elements;
 
 public class SearchPage {
 	public SearchPage()
@@ -17,4 +18,12 @@ public class SearchPage {
 	
    @FindBy(css="input[id='button-search']+h2+p]") 
 	public static WebElement noResutsMessage;
+   
+   @FindBy(xpath="//span[text()='Add to Cart'][1]")
+   public static WebElement firstAddToCartOption;
+   
+   public static void addFirstProductInTheSearchResultsToCart()
+   {
+		Elements.click(firstAddToCartOption);
+   }
 }
